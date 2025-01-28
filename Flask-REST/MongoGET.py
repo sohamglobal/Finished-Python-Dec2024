@@ -7,7 +7,7 @@ api=Api(app)
 
 class AllCustomers(Resource):
     def get(self):
-        client=MongoClient("mongodb+srv://praffull:mongodb913@ethancluster.nz1sx.mongodb.net/?retryWrites=true&w=majority&appName=EthanCluster")
+        client=MongoClient("mongodb+srv://praffull:ethan913@ethancluster.nz1sx.mongodb.net/?retryWrites=true&w=majority&appName=EthanCluster")
         db=client["spiderdb"]
         coll=db["customers"]
         lst=list(coll.find())
