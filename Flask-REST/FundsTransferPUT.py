@@ -10,7 +10,7 @@ def transfermoney():
     amt=float(request.form.get("amount"))
     dic={}
     try:
-        con=pymysql.connect(host='mysql-java-javaee-project.c.aivencloud.com',port=19179,user='avnadmin',password='AVNS_TEZ17S2CIEzgqRcBnb0',database='sharayudb')
+        con=pymysql.connect(host='mysql-java-javaee-project.c.aivencloud.com',port=19179,user='avnadmin',password='AVNS_ethan913',database='sharayudb')
         curs=con.cursor()
         curs.execute("update accounts set balance=balance-%.2f where accno=%d" %(amt,fno))
         con.commit()
