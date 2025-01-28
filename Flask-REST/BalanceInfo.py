@@ -9,7 +9,7 @@ class AccountInfoService(Resource):
     def get(self,ano):
         no=int(ano)
         dic={}
-        con=pymysql.connect(host='mysql-java-javaee-project.c.aivencloud.com',port=19179,user='avnadmin',password='AVNS_TEZ17S2CIEzgqRcBnb0',database='sharayudb')
+        con=pymysql.connect(host='mysql-java-javaee-project.c.aivencloud.com',port=19179,user='avnadmin',password='AVNS_ethan913',database='sharayudb')
         curs=con.cursor()
         curs.execute("select * from accounts where accno=%d" %no)
         data=curs.fetchone()
