@@ -1,0 +1,1 @@
+mongosh "mongodb+srv://ethancluster.nz1sx.mongodb.net/" --apiVersion 1 --username praffull

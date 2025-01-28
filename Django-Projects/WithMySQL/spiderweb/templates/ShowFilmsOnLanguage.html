@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        
+        Films of Language : <b>{{language}}</b>
+        <hr>
+        
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>FilmID</th>
+                <th>Filmname</th>
+                <th>Release Year</th>
+                <th>Genre</th>
+                <th>Language</th>
+                <th>imdbRating</th>
+            </tr>
+            {% for rec in searchresult %}
+            <tr>
+                {%for col in rec%}
+                <td>{{col}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+
+        </table>
+        
+
+    </div>
+    
+</body>
+</html>

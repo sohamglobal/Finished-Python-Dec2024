@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Worker Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Add Worker</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/addworker/" method="post">
+                            {% csrf_token %} 
+                            <div class="form-group">
+                                <label for="workerId">Worker ID</label>
+                                <input type="text" class="form-control" id="workerId" name="workerId" pattern="\d{4}" title="Worker ID must be exactly 4 digits" required>
+                                <small class="form-text text-muted">Please enter a 4-digit Worker ID.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <select class="form-control" id="department" name="department" required>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="development">Development</option>
+                                    <option value="sales">Sales</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="post">Post</label>
+                                <input type="text" class="form-control" id="post" name="post" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="salary">Salary</label>
+                                <input type="number" class="form-control" id="salary" name="salary" step="0.01" min="0" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script>
+    function createRequestObject() {
+            var tmpXmlHttpObject;
+            if (window.XMLHttpRequest) {
+                    tmpXmlHttpObject = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+    
+            return tmpXmlHttpObject;
+        }
+    
+    
+        var http = createRequestObject();
+    
+        function makeGetRequest(lang) {
+            
+            http.open('get', '/searchonlang/'+lang+'/');
+            http.onreadystatechange = processResponse;
+            http.send(null);
+        }
+    
+        function processResponse() {
+            if(http.readyState == 4){
+                var response = http.responseText;
+                document.getElementById('res').innerHTML = response;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h1 class="display-5">Search Films on Language</h1>
+        <hr>
+        <a href="javascript:makeGetRequest('english')">English</a> | 
+        <a href="javascript:makeGetRequest('hindi')">Hindi</a> | 
+        <a href="javascript:makeGetRequest('tamil')">Tamil</a> | 
+        <a href="javascript:makeGetRequest('spanish')">Spanish</a>
+
+        
+<span id="res">
+    <br><br>
+    <img src="/static/good.jpg" width="100%" class="rounded">
+</span>
+
+    </div>
+    
+</body>
+</html>
