@@ -1,0 +1,5 @@
+fnm=input('Enter file name to read ')
+file=open(fnm,"r")
+print()
+print(file.read())
+file.close()
